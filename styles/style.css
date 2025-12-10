@@ -1,0 +1,208 @@
+/* -----------------------------------------------------
+   GLOBAL THEME SETTINGS
+------------------------------------------------------ */
+:root {
+    --bg-dark: #0d0d0d;
+    --bg-light: #1a1a1a;
+    --text-light: #e4e4e4;
+    --neon-green: #39ff14;
+    --gold-glow: #c6a667;
+    --transition: 0.3s ease;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* -----------------------------------------------------
+   HEADER
+------------------------------------------------------ */
+header {
+    width: 100%;
+    padding: 15px 40px;
+    background: rgba(15, 15, 15, 0.9);
+    border-bottom: 1px solid rgba(57, 255, 20, 0.3);
+    box-shadow: 0 0 12px rgba(57,255,20,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h2 {
+    color: var(--neon-green);
+    font-size: 28px;
+    text-shadow: 0 0 8px var(--neon-green);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--neon-green);
+    text-shadow: 0 0 6px var(--neon-green);
+}
+
+/* -----------------------------------------------------
+   HERO SECTION
+------------------------------------------------------ */
+.hero {
+    height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: var(--neon-green);
+    text-shadow: 0 0 12px var(--neon-green);
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--gold-glow);
+    text-shadow: 0 0 6px var(--gold-glow);
+}
+
+/* -----------------------------------------------------
+   SECTION HEADINGS
+------------------------------------------------------ */
+section {
+    max-width: var(--max-width);
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-green);
+}
+
+/* -----------------------------------------------------
+   GALLERY
+------------------------------------------------------ */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(198,166,103,0.3);
+    box-shadow: 0 0 8px rgba(198,166,103,0.3);
+    transition: var(--transition);
+}
+
+.gallery a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px var(--neon-green);
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.gallery a:hover img {
+    filter: brightness(1.2);
+}
+
+/* -----------------------------------------------------
+   FOOTER
+------------------------------------------------------ */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px 0;
+    background: var(--bg-light);
+    border-top: 1px solid rgba(57, 255, 20, 0.2);
+    color: var(--gold-glow);
+    text-shadow: 0 0 5px var(--gold-glow);
+}
+
+/* -----------------------------------------------------
+   RESPONSIVE DESIGN
+------------------------------------------------------ */
+
+/* Smaller tablets */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    header h2 {
+        font-size: 22px;
+    }
+
+    nav a {
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+}
